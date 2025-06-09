@@ -53,6 +53,9 @@ public class VotoService {
         String cpf = request.getCpfAssociado().replaceAll("[^\\d]", "");
         Associado associado = associadoRepository.findByCpf(cpf).orElseThrow(() -> new AssociadoNaoEncontradoException("Associado não encontrado"));
 
+        //Salvando qualquer cpf no momento do voto para fins de teste de carga
+        //Associado associado = associadoRepository.findByCpf(cpf).orElseGet(() -> associadoRepository.save(Associado.builder().cpf(cpf).build()));
+
         LocalDateTime agora = LocalDateTime.now();
         if (agora.isBefore(sessao.getDataHoraInicio()) || agora.isAfter(sessao.getDataHoraFim())) {
             throw new SessaoEncerradaException("A sessão de votação está encerrada para esta pauta");
