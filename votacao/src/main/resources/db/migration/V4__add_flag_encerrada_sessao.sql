@@ -1,0 +1,2 @@
+ALTER TABLE sessao_votacao
+ADD COLUMN encerrada BOOLEAN NOT NULL DEFAULT FALSE;
