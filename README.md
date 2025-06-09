@@ -15,6 +15,11 @@ Este projeto é um sistema de votação construído com foco em escalabilidade, 
 ```bash
 docker compose up --build
 ```
+### O projeto conta com swagger para melhor consulta dos endpoints e documentação
+Após rodar o projeto basta acessar:
+```
+http://localhost:8080/swagger-ui/index.html#/
+```
 
 ## Este comando irá:
 - Construir a imagem da API Spring Boot
